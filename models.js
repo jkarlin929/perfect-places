@@ -13,7 +13,7 @@ const Place = sequelize.define('place', {
   location: Sequelize.STRING,
   description: Sequelize.STRING,
   visited: Sequelize.BOOLEAN,
-  date_visited: Sequelize.DATEONLY
+  date_visited: Sequelize.STRING
 })
 
 
