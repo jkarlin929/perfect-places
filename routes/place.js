@@ -22,7 +22,7 @@ placeRouter.get('/', async (req, res) => {
 placeRouter.get('/:id', async(req, res) => {
   try {
     const places = await Place.findByPk(req.params.id);
-    res.json(place);
+    res.json(places);
   } catch(e) {
     console.error(e);
     res.status(404).json({message: e.message});
@@ -34,6 +34,24 @@ placeRouter.post('/', async(req, res) => {
     const places = await Place.create(req.body);
     res.json(places);
   } catch(e) {
+    res.status(404).json({message: e.message})
+  };
+});
+
+placeRouter.put('/:id', async(req, res) => {
+  try {
+    const places = await Place.update({
+      location: req.body.location,
+      description: req.body.description
+    },
+    {
+      returning: true,
+      where: {
+        id: req.params.id
+        }
+      })
+      .then(place => res.json(place)
+    )} catch(e) {
     res.status(404).json({message: e.message})
   };
 });
