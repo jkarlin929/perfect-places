@@ -1,13 +1,12 @@
 {
   "name": "places",
   "version": "1.0.0",
-  "description": "",
+  "description": "A React/Express App that allows you to track the popular locations on your bucket list!",
   "main": "index.js",
   "scripts": {
     "resetDb": "node resetDb.js",
     "start": "node models.js",
     "seed": "node seed.js",
-    "create": "node resetDb && node seed.js",
     "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,5 +25,13 @@
   },
   "devDependencies": {
     "nodemon": "^1.18.9"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jkarlin929/perfect-places.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jkarlin929/perfect-places/issues"
+  },
+  "homepage": "https://github.com/jkarlin929/perfect-places#readme"
 }
